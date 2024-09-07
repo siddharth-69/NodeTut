@@ -1,0 +1,16 @@
+body {
+    height: 200vh;
+    background-color: blue;
+}
+
+.position-test {
+    position: fixed;
+    background-color: red;
+    padding: 8px;
+    top: 8px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
