@@ -13,15 +13,16 @@ const keepSendingMessageEveryNSeconds = (producer, time) => {
 
     setInterval(async () => {
         console.log('******** Publishing the message ********');
+        const topicName = (counter % 2) ? 'test-topic-3' : 'test-topic-2'
 
         await producer.send({
-            topic: 'test-topic-3',
+            topic: topicName,
             messages: [{ value: `Hello KafkaJS ${counter} user!` }],
         });
 
         counter++
         
-        console.log('******** Message sent successfully!');
+        console.log(`******** Message sent successfully to ${topicName}!`);
     }, time);
 }
 
